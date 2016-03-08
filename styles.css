@@ -25,3 +25,50 @@ body, a:link, a:visited, a:active{
   border-radius:10px;
   position:absolute;
 }
+.square-dancer{
+  border:2px solid green;
+  background: url("img/spiral_200.png") no-repeat center;
+  position:absolute;
+  height:200px;
+  width:200px;
+  animation: rotating 2s linear infinite;
+}
+
+.square-dancer-faded{
+  border:2px solid green;
+  background: url("img/album2.jpg") no-repeat center;
+  position:absolute;
+  height:200px;
+  width:200px;
+  /*animation: fading 2s linear infinite;*/
+  -webkit-animation: pulsate 1s ease-out;
+  -webkit-animation-iteration-count: infinite; 
+  opacity: 0.0
+}
+
+.square-dancer-faded:hover {
+  opacity: 0.5;
+}
+
+@keyframes rotating {
+  from {
+    transform:rotate(0deg);
+  }
+  to {
+    transform:rotate(360deg);
+  }
+}
+
+@keyframes pulsate {
+    0% {-webkit-transform: opacity: 0.0;}
+    50% {opacity: 1.0;}
+    100% {-webkit-transform: opacity: 0.0;}
+}
+
+
+/*@-webkit-keyframes pulsate {
+    0% {-webkit-transform: scale(0.1, 0.1); opacity: 0.0;}
+    50% {opacity: 1.0;}
+    100% {-webkit-transform: scale(1.2, 1.2); opacity: 0.0;}
+}
+*/
