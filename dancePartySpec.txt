@@ -1,0 +1,22 @@
+squareDancer
+  - overwrite the class tag in $node to be squareDancer, use it to create a square shaped dancer
+
+squareDancerFaded
+  - moves in a circle and fades in and out  
+
+
+
+MVP for W2D2
+
+- write tests for new types
+- make button that lines up new dancers
+- make dancers that interact with other dancers
+- make a dancer that reacts to the mouse
+
+Extra stuff
+
+- draggable dancers
+- turntable in the middle
+- records plays when spinning
+- Page through overlapping albums
+- add people dancing to the record
