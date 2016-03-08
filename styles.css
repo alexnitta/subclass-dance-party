@@ -21,10 +21,23 @@ body, a:link, a:visited, a:active{
   background-color: #777;
 }
 .dancer{
-  border:10px solid red;
-  border-radius:10px;
   position:absolute;
 }
+
+.dancer .body{
+  background: url("img/dancer-body.png");
+  display: inline-block;
+  height: 153px;
+  width: 134px;  
+}
+
+.dancer .face{
+  font-size: 100px;
+  height: 72px;
+  display: block;
+  text-align: center;
+}
+
 .square-dancer{
   border:2px solid green;
   background: url("img/spiral_200.png") no-repeat center;
