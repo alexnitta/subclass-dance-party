@@ -5,6 +5,20 @@ squareDancerFaded
   - moves in a circle and fades in and out  
 
 
+DANCER TYPES:
+Pulsating head
+Rocking Head
+Extra: Expressive Head
+
+Records have properties:
+  - artwork
+  - song
+
+Records have methods:
+  - play song
+    - music plays, artwork shows on turntable and rotates, dancers move
+  - pause song
+    - music stops, dancers stop  
 
 MVP for W2D2
 
@@ -15,6 +29,7 @@ MVP for W2D2
 
 Extra stuff
 
+- contain dancers in div
 - draggable dancers
 - turntable in the middle
 - records plays when spinning

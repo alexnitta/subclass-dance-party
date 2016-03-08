@@ -28,6 +28,17 @@ $(document).ready(function() {
       Math.random() * 1000
     );
     $('body').append(dancer.$node);
+
   });
+
+  var shuffleAlbums = function() {
+    for (var i = 0; i <= 10; i++) {
+      console.log(i);
+      var album = new makeRecordDancer();
+      $('body').append(album.$node);
+    }  
+  };
+
+  shuffleAlbums();
 });
 

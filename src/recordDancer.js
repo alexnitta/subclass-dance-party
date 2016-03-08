@@ -1,24 +1,25 @@
-var makeEmojiDancer = function(top, left, timeBetweenSteps) {
+var makeRecordDancer = function(top, left, timeBetweenSteps) {
 
   // we plan to overwrite the step function below, but we still want the superclass step behavior to work,
   // so we must keep a copy of the old version of this function
   
   // inheriting properties from makeDancer
   makeDancer.call(this, top, left, timeBetweenSteps);
-
+  var selection = this.select();
+  var artwork = selection['artwork'];
   //Overrwriting this.$node from dancer.js
-  this.$node = $('<span class="dancer"><span class="face ' + this.action() + '">' + this.face() + '</span><span class="body"></span></span>');
+  this.$node = $('<span class="album"><img src="' + artwork + '"></span>');
 
-  this.setPosition(top, left);
+  // this.setPosition(top, left);
 };
 
 // Inheriting the prototype from makeDancer
-makeEmojiDancer.prototype = Object.create(makeDancer.prototype);
+makeRecordDancer.prototype = Object.create(makeDancer.prototype);
 
 // re-assigning the overwritten constructor
-makeEmojiDancer.prototype.constructor = makeEmojiDancer;
+makeRecordDancer.prototype.constructor = makeRecordDancer;
 
-makeEmojiDancer.prototype.step = function() {
+makeRecordDancer.prototype.step = function() {
   // call the old version of step at the beginning of any call to this new version of step
   // toggle() is a jQuery method to show/hide the <span> tag.
   // See http://api.jquery.com/category/effects/ for this and
@@ -31,17 +32,20 @@ makeEmojiDancer.prototype.step = function() {
   // this.$node.toggle();
 };
 
-makeEmojiDancer.prototype.face = function() {
-  var emojis = [];
-  for (var i = 600; i < 640; i++) {
-    emojis.push('&#x1f' + i);
-  }
-  var randomFace = Math.floor(Math.random() * emojis.length);
-  return emojis[randomFace];
+
+makeRecordDancer.prototype.select = function() {
+  var records = [
+    {artwork: 'img/album2.jpg', music: 'song.mp3' },
+    {artwork: 'img/spiral_200.png', music: 'song2.mp3' }
+  ];
+
+  var random = Math.floor(Math.random() * records.length);
+  return records[random];
 };
 
-makeEmojiDancer.prototype.action = function() {
-  var actions = ['rocking', 'pulsating'];
-  var randomAction = Math.floor(Math.random() * actions.length);
-  return actions[randomAction];
+makeRecordDancer.prototype.play = function() {
+
+};
+makeRecordDancer.prototype.pause = function() {
+
 };
