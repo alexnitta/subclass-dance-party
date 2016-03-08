@@ -23,11 +23,11 @@ $(document).ready(function() {
     // make a dancer with a random position
 
     var dancer = new dancerMakerFunction(
-      $("body").height() * Math.random(),
-      $("body").width() * Math.random(),
+      $('#dance-floor').height() * Math.random(),
+      $('#dance-floor').width() * Math.random(),
       Math.random() * 1000
     );
-    $('body').append(dancer.$node);
+    $('#dance-floor').append(dancer.$node);
 
   });
 
@@ -35,10 +35,9 @@ $(document).ready(function() {
     for (var i = 0; i <= 10; i++) {
       console.log(i);
       var album = new makeRecordDancer();
-      $('body').append(album.$node);
+      $('#albums').append(album.$node);
     }  
   };
-
   shuffleAlbums();
 });
 

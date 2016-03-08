@@ -9,7 +9,7 @@ var makeEmojiDancer = function(top, left, timeBetweenSteps) {
   //Overrwriting this.$node from dancer.js
   this.$node = $('<span class="dancer"><span class="face ' + this.action() + '">' + this.face() + '</span><span class="body"></span></span>');
 
-  this.setPosition(top, left);
+  this.setPosition(top - 150, left);
 };
 
 // Inheriting the prototype from makeDancer

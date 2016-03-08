@@ -3,8 +3,15 @@ body, html{
 }
 body{
   margin: 0px;
-  background-color:#444;
   font-size: 18px;
+}
+
+#app-container {
+  background: url("img/background.png") top center no-repeat;
+  width:100%;
+  height: 1080px;
+  position: relative;
+  background-size: cover;
 }
 body, a:link, a:visited, a:active{
   color: lightblue;
@@ -21,14 +28,35 @@ body, a:link, a:visited, a:active{
   background-color: #777;
 }
 
+#record-player {
+    background: url("img/record-player.png") top center no-repeat;
+    height: 290px;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    bottom: 350px;
+
+}
+
+#dance-floor {
+  height: 330px;
+  width: 100%;
+  position: absolute;
+  bottom: 10px;
+
+}
+
 /* ALBUMS */
+#albums {
+    width:100%;
+}
 span.album {
-    height: 150px;
-    width: 150px;
+    height: 125px;
+    width: 125px;
     display: block;
     background-size: 100% 100%;
     float: left;
-    margin: 10px 0 0 10px;
+    margin: 4px;
 }
 
 span.album img {
