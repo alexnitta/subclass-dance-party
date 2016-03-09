@@ -29,7 +29,22 @@ $(document).ready(function() {
     );
     $('#dance-floor').append(dancer.$node);
 
+    // add dancer to global dancers array
+    dancers.push(dancer);
   });
+
+  $('.lineUpDancersButton').on('click', function() {
+
+    var $dancefloorWidth = $('#dance-floor').width();
+    var gap = $dancefloorWidth / dancers.length;
+    var left = 0;
+    for (var i = 0; i < dancers.length; i++) {
+      console.log(dancers[i]);
+      dancers[i].lineup(left,50);
+      left += gap;
+    }
+
+  }); 
 
   var shuffleAlbums = function() {
     for (var i = 0; i <= 10; i++) {

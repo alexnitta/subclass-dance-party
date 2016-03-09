@@ -10,6 +10,9 @@ var makeEmojiDancer = function(top, left, timeBetweenSteps) {
   this.$node = $('<span class="dancer"><span class="face ' + this.action() + '">' + this.face() + '</span><span class="body"></span></span>');
 
   this.setPosition(top - 150, left);
+  if (dancers.length > 0) {
+    this.reactToPosition(top - 150, left);
+  }
 };
 
 // Inheriting the prototype from makeDancer
@@ -44,4 +47,49 @@ makeEmojiDancer.prototype.action = function() {
   var actions = ['rocking', 'pulsating'];
   var randomAction = Math.floor(Math.random() * actions.length);
   return actions[randomAction];
+};
+
+makeEmojiDancer.prototype.lineup = function(newLeft, newTop) {
+  console.log('lineup method called on dancer instance' + this);
+  $(this.$node).css({'left': newLeft, 'top': newTop});
+};
+
+makeEmojiDancer.prototype.reactToPosition = function(top, left) {
+  makeDancer.prototype.setPosition.call(this, top, left);
+  var distances = [];
+
+  for (var i = 0; i < dancers.length; i ++) {
+    var x1 = left;
+    var y1 = top;
+    var x2 = dancers[i].left;
+    var y2 = dancers[i].top;
+    var dist = Math.sqrt( Math.pow((x1-x2), 2) + Math.pow((y1-y2), 2) );
+    distances.push(dist);
+  }
+
+  // Get the closet dancer
+  var closest = 9999;
+  for (var i = 0; i < distances.length; i++) {
+    if (distances[i] < closest) {
+      closest = distances[i];
+    }
+  }
+  var closestIndex = distances.indexOf(closest);
+  console.log( "CLOSEST: " + distances[closestIndex]);
+
+  // swap the positions of the dancers
+  var closestDancer = dancers[closestIndex];
+  var whatisThis = this;
+  // debugger;
+
+  var $dancefloorWidth = $('#dance-floor').width();
+
+  var newLeft = 80;
+  if (closestDancer.left > $dancefloorWidth / 2) {
+    newLeft *= -1;
+  }
+
+  $(closestDancer.$node).css({'left': left + newLeft, 'top': top});
+
+
 };

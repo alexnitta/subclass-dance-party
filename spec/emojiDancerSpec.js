@@ -12,10 +12,13 @@ describe('emojiDancer', function() {
     expect(emojiDancer.$node).to.be.an.instanceof(jQuery);
   });
 
-  it('should have a step function that makes its node blink', function() {
-    sinon.spy(emojiDancer.$node, 'toggle');
-    emojiDancer.step();
-    expect(emojiDancer.$node.toggle.called).to.be.true;
+  it('should have methods named "face" and "action"', function() {
+    expect(emojiDancer.face).to.be.a('function');
+    expect(emojiDancer.action).to.be.a('function');
+  });
+
+  it('should generate random faces', function() {
+      expect(emojiDancer.face()).to.not.equal(emojiDancer.face());
   });
 
   describe('dance', function() {
