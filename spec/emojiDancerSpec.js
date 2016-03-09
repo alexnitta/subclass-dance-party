@@ -2,6 +2,7 @@ describe('emojiDancer', function() {
 
   var emojiDancer, clock;
   var timeBetweenSteps = 100;
+  window.dancers = [];
 
   beforeEach(function() {
     clock = sinon.useFakeTimers();

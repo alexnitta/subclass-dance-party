@@ -23,8 +23,8 @@ Records have methods:
 MVP for W2D2
 
 - write tests for new types
-- make button that lines up new dancers
-- make dancers that interact with other dancers
+- make button that lines up new dancers DONE
+- make dancers that interact with other dancers DONE
 - make a dancer that reacts to the mouse
 
 Extra stuff
@@ -35,3 +35,5 @@ Extra stuff
 - records plays when spinning
 - Page through overlapping albums
 - add people dancing to the record
+
+

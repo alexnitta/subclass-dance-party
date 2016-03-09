@@ -8,7 +8,8 @@ var makeRecordDancer = function(top, left, timeBetweenSteps) {
   var selection = this.select();
   var artwork = selection['artwork'];
   //Overrwriting this.$node from dancer.js
-  this.$node = $('<span class="album"><img src="' + artwork + '"></span>');
+  var song = selection['music'];
+  this.$node = $('<span class="album" data-song="' + song + '"><img src="' + artwork + '"></span>');
 
   // this.setPosition(top, left);
 };

@@ -12,10 +12,10 @@ describe('recordDancer', function() {
     expect(recordDancer.$node).to.be.an.instanceof(jQuery);
   });
 
-  it('should have a step function that makes its node blink', function() {
-    sinon.spy(recordDancer.$node, 'toggle');
-    recordDancer.step();
-    expect(recordDancer.$node.toggle.called).to.be.true;
+  it('should have methods named "select", "play" and "pause"', function() {
+    expect(recordDancer.select).to.be.a('function');
+    expect(recordDancer.play).to.be.a('function');
+    expect(recordDancer.pause).to.be.a('function');
   });
 
   describe('dance', function() {
