@@ -36,8 +36,8 @@ makeRecordDancer.prototype.step = function() {
 
 makeRecordDancer.prototype.select = function() {
   var records = [
-    {artwork: 'img/album2.jpg', music: 'song.mp3' },
-    {artwork: 'img/spiral_200.png', music: 'song2.mp3' }
+    {artwork: 'img/album2.jpg', music: 'songs/california-love.mp3' },
+    {artwork: 'img/spiral_200.png', music: 'songs/come-togther.mp3' }
   ];
 
   var random = Math.floor(Math.random() * records.length);

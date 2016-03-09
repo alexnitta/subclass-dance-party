@@ -21,10 +21,45 @@
 
       </div>
       <div id="albums"></div>
-      <div id="record-player"></div>;
+      <div id="record-player">
+        <audio autoplay>
+
+          Your browser does not support the audio element.
+        </audio>
+
+      </div>;
       <div id="dance-floor"></div>
     </div>
     <script src="src/init.js"></script>
+    <script>
+
+      var $player = $('audio')[0];
+      $("#albums").on("click", ".album", function(){
+
+        //add class 'playing'
+        if ($(this).hasClass("playing")) {
+          $(this).removeClass("playing");
+          $(this).addClass("pause");
+          $player.pause();
+        } else if ($(this).hasClass("pause")) {
+          $(this).removeClass("pause");
+          $(this).addClass("playing");
+          $player.play();          
+        } else {
+          $player.src = $(this).data().song;
+          $player.load(); //just start buffering (preload)
+          $player.play(); //start playing      
+          var recordCollection = $("#albums").children();
+          for (var i = 0; i <recordCollection.length; i++) {
+            $(recordCollection[i]).removeClass("pause");
+            $(recordCollection[i]).removeClass("playing");
+          }
+          $(this).addClass("playing");
+        }
+      });
+
+
+    </script>
 
   </body>
 </html>

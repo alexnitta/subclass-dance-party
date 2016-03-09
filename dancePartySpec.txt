@@ -37,3 +37,11 @@ Extra stuff
 - add people dancing to the record
 
 
+
+
+Next Steps
+
+- add real mp3s to the array (also add MP3 files to project)
+- add click handler to play music when record is clicked
+- add mouseover actions for emoji dancers
+- make record spin on turntable when played
