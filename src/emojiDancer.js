@@ -10,6 +10,7 @@ var makeEmojiDancer = function(top, left, timeBetweenSteps) {
   this.$node = $('<span class="dancer"><span class="face ' + this.action() + '">' + this.face() + '</span><span class="body"></span></span>');
 
   this.setPosition(top - 150, left);
+  
   if (dancers.length > 0) {
     this.reactToPosition(top - 150, left);
   }

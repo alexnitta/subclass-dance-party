@@ -9,7 +9,7 @@ var makeRecordDancer = function(top, left, timeBetweenSteps) {
   var artwork = selection['artwork'];
   //Overrwriting this.$node from dancer.js
   var song = selection['music'];
-  this.$node = $('<span class="album" data-song="' + song + '"><img src="' + artwork + '"></span>');
+  this.$node = $('<span class="album" data-artwork = "' + artwork + '" data-song="' + song + '"><img src="' + artwork + '"></span>');
 
   // this.setPosition(top, left);
 };
@@ -36,8 +36,18 @@ makeRecordDancer.prototype.step = function() {
 
 makeRecordDancer.prototype.select = function() {
   var records = [
-    {artwork: 'img/album2.jpg', music: 'songs/california-love.mp3' },
-    {artwork: 'img/spiral_200.png', music: 'songs/come-togther.mp3' }
+    {artwork: 'img/california-love.jpg', music: 'songs/california-love.mp3' },
+    {artwork: 'img/come-together.jpg', music: 'songs/come-togther.mp3' },
+    {artwork: 'img/foxey-lady.jpg', music: 'songs/foxey-lady.mp3' },
+    {artwork: 'img/heavy-metal.jpg', music: 'songs/heavy-metal-drummer.mp3' },
+    {artwork: 'img/i-wanna-dance.jpg', music: 'songs/i-wanna-dance-with-somebody.mp3' },
+    {artwork: 'img/sexx-laws.jpg', music: 'songs/sexx-laws.m4a' },
+    {artwork: 'img/superstition.jpg', music: 'songs/superstition.mp3' },
+    {artwork: 'img/tired-of-being-alone.jpg', music: 'songs/tired-of-being-alone' },
+    {artwork: 'img/walk-dont-run.jpg', music: 'songs/walk-dont-run.mp3' },
+    {artwork: 'img/wildcat.jpg', music: 'songs/wildcat.m4a' }
+
+
   ];
 
   var random = Math.floor(Math.random() * records.length);

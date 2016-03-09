@@ -16,12 +16,12 @@
       <div class="topbar">
         <span class="title">object dance party</span>
         <a href="#" class="addDancerButton" data-dancer-maker-function-name="makeEmojiDancer">add an emoji dancer</a>
-        <a href="#" class="addDancerButton" data-dancer-maker-function-name="makeRecordDancer">add a record</a>
         <a href="#" class="lineUpDancersButton" data-dancer-maker-function-name="lineUpDancers">line up dancers</a>
 
       </div>
       <div id="albums"></div>
       <div id="record-player">
+      <div class="record"></div>
         <audio autoplay>
 
           Your browser does not support the audio element.
@@ -46,6 +46,10 @@
           $(this).addClass("playing");
           $player.play();          
         } else {
+          var $record = $('.record')[0];
+          console.log($(this).data());
+          var $artwork = $(this).data().artwork;
+          $('.record').css({ "background" : 'url("' + $artwork +'") center no-repeat' })
           $player.src = $(this).data().song;
           $player.load(); //just start buffering (preload)
           $player.play(); //start playing      
